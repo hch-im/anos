@@ -12,5 +12,10 @@ LF	equ	0x0a
 ;----------------------;
 VIDEO_MEMORY equ 0xb8000
 WHITE_ON_BLACK equ 0x0f
-	
+
+;----------------------;
+;	kernel memory offset
+;----------------------;
+KERNEL_OFFSET equ 0x1000
+
 %endif	;END __CONSTANTS_INC__

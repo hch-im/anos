@@ -9,21 +9,40 @@
 [org 0x7c00]
 	jmp	rm_main
 
-%include	"./include/gdt.asm"
+%include	"./include/gdt.inc"
 %include	"./include/print_16.inc"
-
+%include	"./include/disk.inc"
 ;--------------------------------------------------;
 ;	The main function of real mode
 ;--------------------------------------------------;
 rm_main:
+	mov	[BOOT_DRIVE], dl		;get boot drive from dl
 	mov	bp, 0x9000				;setup stack
 	mov	sp, bp
 	
 	mov	si, MSG_RM		
 	call	print_string
 
+	call	load_kernel			;load kernel
+
 	jmp	switch_to_pm
-			
+
+;-------------------------------------------------;
+;	load kernel
+;-------------------------------------------------;
+load_kernel:			
+	pusha
+	mov	si, MSG_LOAD_KERNEL
+	call	print_string
+	;------------------------;
+	;	Load kernel from disk.
+	;------------------------;
+	mov	bx, KERNEL_OFFSET		;set memory offset
+	mov	dh, 15					;read 15 sectors
+	mov	dl,	[BOOT_DRIVE]		;set drive
+	call	disk_load
+	popa
+	ret
 ;-------------------------------------------------;
 ;	switch to protected mode
 ;	1. switch off interrupts
@@ -75,15 +94,22 @@ pm_main:
 	mov esi, MSG_PM
 	call print_string_32
 	;-------------------------------;
+	;	jump to loaded kernel code
+	;-------------------------------;	
+	call	KERNEL_OFFSET
+	;-------------------------------;
 	;	halt the system
 	;-------------------------------;		
 	cli
 	hlt
-	
-MSG_RM db "Loading operating system ...", CR, LF, 0
-MSG_PM db "Protected mode.", 0
 
 %include	"./include/print_32.inc"
+
+; Global variables
+BOOT_DRIVE	db 0	
+MSG_RM db "Loading operating system...", CR, LF, 0
+MSG_LOAD_KERNEL db "Loading Kernel...", CR, LF, 0
+MSG_PM db "Successfully witched to protected mode.", 0
 
 times 510-($-$$) db 0
 dw 0xaa55	

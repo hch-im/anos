@@ -1,6 +1,19 @@
-;
-; load dh sectors to es:bx from drive dl
-;
+;*******************************************************
+;	disk.inc
+;	load x sectors to memory from drive.
+;		dh : specify the number of sectors to load
+;		dl : the drive to load from
+;		es:bx :	the memory location to load
+;	usage:
+;		mov dl, <driver>
+;		mov dh, <number of sectors>
+;		mov	bx, <memory addr>
+;		call	disk_load
+;*******************************************************
+%ifndef __DISK_INC__
+%define __DISK_INC__
+[bits 16]
+
 disk_load:
 	push	dx		;store dx to stack		
 	mov	ah, 0x02	;BIOS read sector function
@@ -25,3 +38,5 @@ disk_error:
 	jmp	$
 
 DISK_ERROR_MSG	db	"Disk read error.", 0	
+
+%endif
