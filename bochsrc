@@ -11,7 +11,7 @@ romimage: file=/usr/local/share/bochs/BIOS-bochs-latest
 vgaromimage: file=/usr/local/share/bochs/VGABIOS-lgpl-latest
 
 # floppy driver
-floppya: 1_44=os-img, status=inserted
+floppya: 1_44=anos.img, status=inserted
 # boot from floppy
 boot: floppy
 # log messages

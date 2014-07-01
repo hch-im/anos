@@ -1,3 +1,9 @@
+#disk image
+*.img
+
+#log file
+bochsout.txt
+
 # Object files
 *.o
 *.ko

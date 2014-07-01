@@ -94,7 +94,7 @@ pm_main:
 	mov esi, MSG_PM
 	call print_string_32
 	;-------------------------------;
-	;	jump to loaded kernel code
+	;	jump to kernel code
 	;-------------------------------;	
 	call	KERNEL_OFFSET
 	;-------------------------------;
