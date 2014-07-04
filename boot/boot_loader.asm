@@ -93,6 +93,7 @@ init_pm:
 pm_main:
 	mov esi, MSG_PM
 	call print_string_32
+
 	;-------------------------------;
 	;	jump to kernel code
 	;-------------------------------;	

@@ -1,6 +1,5 @@
 #debug
 gdbstub: enabled=1, port=1234, text_base=0, data_base=0, bss_base=0
-#display_library: x, options="gui_debug"
 
 # rom image
 romimage: file=/usr/local/share/bochs/BIOS-bochs-latest 

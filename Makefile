@@ -1,4 +1,3 @@
-
 #################################################
 #	Make OS
 #################################################
@@ -8,10 +7,11 @@ all: anos.img
 	@echo "--------------------------------------"
 	@echo "Successfully generate OS image"
 	@echo "--------------------------------------"
+	dd if=anos.img of=a.img bs=512 count=2048 conv=notrunc
 
 anos.img: subdirs
 	@echo "--------------------------------------"
-	@echo "Generate anos.img"
+	@echo "Generate anos-img"
 	@echo "--------------------------------------"	
 	cat boot/bootloader.bin kernel/kernel.bin > $@
 
@@ -27,6 +27,6 @@ clean:
 	for dir in $(SUBDIRS); do \
 		$(MAKE) clean -C $$dir; \
 	done
-	rm *.img
+	rm anos.img
 
-.PHONY: all run debug anos.image subdirs $(SUBDIRS) clean	
+.PHONY: all anos.image subdirs $(SUBDIRS) clean	

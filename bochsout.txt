@@ -33,44 +33,44 @@
 00000000000i[      ]   SB16 support: yes
 00000000000i[      ]   USB support: yes
 00000000000i[      ]   VGA extension support: vbe cirrus voodoo
-00000000000i[MEM0  ] allocated memory at 0x7fed229b2010. after alignment, vector=0x7fed229b3000
+00000000000i[MEM0  ] allocated memory at 0x7f5d38580010. after alignment, vector=0x7f5d38581000
 00000000000i[MEM0  ] 16.00MB
 00000000000i[MEM0  ] mem block size = 0x00100000, blocks=16
 00000000000i[MEM0  ] rom at 0xfffe0000/131072 ('/usr/local/share/bochs/BIOS-bochs-latest')
-00000000000i[      ] lt_dlhandle is 0x3267bc0
+00000000000i[      ] lt_dlhandle is 0x26b8ba0
 00000000000i[PLUGIN] loaded plugin libbx_hdimage.so
-00000000000i[      ] lt_dlhandle is 0x3268470
+00000000000i[      ] lt_dlhandle is 0x26b9450
 00000000000i[PLUGIN] loaded plugin libbx_soundmod.so
 00000000000i[SNDLOW] Sound lowlevel module 'oss' initialized
-00000000000i[      ] lt_dlhandle is 0x3270d50
+00000000000i[      ] lt_dlhandle is 0x26c1d30
 00000000000i[PLUGIN] loaded plugin libbx_pci.so
-00000000000i[      ] lt_dlhandle is 0x3271780
+00000000000i[      ] lt_dlhandle is 0x26c2760
 00000000000i[PLUGIN] loaded plugin libbx_pci2isa.so
-00000000000i[      ] lt_dlhandle is 0x3272190
+00000000000i[      ] lt_dlhandle is 0x26c3170
 00000000000i[PLUGIN] loaded plugin libbx_usb_uhci.so
-00000000000i[      ] lt_dlhandle is 0x3274870
+00000000000i[      ] lt_dlhandle is 0x26c5850
 00000000000i[PLUGIN] loaded plugin libbx_usb_common.so
-00000000000i[      ] lt_dlhandle is 0x3275130
+00000000000i[      ] lt_dlhandle is 0x26c6110
 00000000000i[PLUGIN] loaded plugin libbx_acpi.so
-00000000000i[      ] lt_dlhandle is 0x3275b40
+00000000000i[      ] lt_dlhandle is 0x26c6b20
 00000000000i[PLUGIN] loaded plugin libbx_cmos.so
-00000000000i[      ] lt_dlhandle is 0x3276470
+00000000000i[      ] lt_dlhandle is 0x26c7450
 00000000000i[PLUGIN] loaded plugin libbx_dma.so
-00000000000i[      ] lt_dlhandle is 0x3276f00
+00000000000i[      ] lt_dlhandle is 0x26c7ee0
 00000000000i[PLUGIN] loaded plugin libbx_pic.so
-00000000000i[      ] lt_dlhandle is 0x32777e0
+00000000000i[      ] lt_dlhandle is 0x26c87c0
 00000000000i[PLUGIN] loaded plugin libbx_pit.so
-00000000000i[      ] lt_dlhandle is 0x3278210
+00000000000i[      ] lt_dlhandle is 0x26c91f0
 00000000000i[PLUGIN] loaded plugin libbx_vga.so
-00000000000i[      ] lt_dlhandle is 0x3278a10
+00000000000i[      ] lt_dlhandle is 0x26c99f0
 00000000000i[PLUGIN] loaded plugin libbx_floppy.so
-00000000000i[      ] lt_dlhandle is 0x3279620
+00000000000i[      ] lt_dlhandle is 0x26ca600
 00000000000i[PLUGIN] loaded plugin libbx_ioapic.so
-00000000000i[      ] lt_dlhandle is 0x3279f80
+00000000000i[      ] lt_dlhandle is 0x26caf60
 00000000000i[PLUGIN] loaded plugin libbx_keyboard.so
-00000000000i[      ] lt_dlhandle is 0x327a920
+00000000000i[      ] lt_dlhandle is 0x26cb900
 00000000000i[PLUGIN] loaded plugin libbx_harddrv.so
-00000000000i[      ] lt_dlhandle is 0x328ca20
+00000000000i[      ] lt_dlhandle is 0x26dda00
 00000000000i[PLUGIN] loaded plugin libbx_pci_ide.so
 00000000000i[PLUGIN] init_dev of 'pci' plugin device by virtual method
 00000000000i[DEV   ] i440FX PMC present at device 0, function 0
@@ -78,7 +78,7 @@
 00000000000i[DEV   ] PIIX3 PCI-to-ISA bridge present at device 1, function 0
 00000000000i[PLUGIN] init_dev of 'cmos' plugin device by virtual method
 00000000000i[CMOS  ] Using local time for initial clock
-00000000000i[CMOS  ] Setting initial clock to: Tue Jul  1 18:50:12 2014 (time0=1404255012)
+00000000000i[CMOS  ] Setting initial clock to: Fri Jul  4 04:01:16 2014 (time0=1404460876)
 00000000000i[PLUGIN] init_dev of 'dma' plugin device by virtual method
 00000000000i[DMA   ] channel 4 used by cascade
 00000000000i[PLUGIN] init_dev of 'pic' plugin device by virtual method
@@ -93,7 +93,7 @@
 00000000000i[MEM0  ] rom at 0xc0000/41472 ('/usr/local/share/bochs/VGABIOS-lgpl-latest')
 00000000000i[PLUGIN] init_dev of 'floppy' plugin device by virtual method
 00000000000i[DMA   ] channel 2 used by Floppy Drive
-00000000000i[FLOPPY] fd0: 'anos.img' ro=0, h=2,t=80,spt=18
+00000000000i[FLOPPY] fd0: 'a.img' ro=0, h=2,t=80,spt=18
 00000000000i[PLUGIN] init_dev of 'acpi' plugin device by virtual method
 00000000000i[DEV   ] ACPI Controller present at device 1, function 3
 00000000000i[PLUGIN] init_dev of 'ioapic' plugin device by virtual method
@@ -226,43 +226,28 @@
 00002404665i[BXVGA ] VBE known Display Interface b0c5
 00002407589i[VBIOS ] VBE Bios $Id: vbe.c,v 1.64 2011/07/19 18:25:05 vruppert Exp $
 00003200003i[XGUI  ] charmap update. Font Height is 16
-00014918923i[BIOS  ] Booting from 0000:7c00
-00014953102i[FLOPPY] partial read() on floppy image returns 88/512
-00014997548i[FLOPPY] read() on floppy image returns 0
-00015041994i[FLOPPY] read() on floppy image returns 0
-00015086439i[FLOPPY] read() on floppy image returns 0
-00015130885i[FLOPPY] read() on floppy image returns 0
-00015175329i[FLOPPY] read() on floppy image returns 0
-00015219774i[FLOPPY] read() on floppy image returns 0
-00015264220i[FLOPPY] read() on floppy image returns 0
-00015308665i[FLOPPY] read() on floppy image returns 0
-00015353111i[FLOPPY] read() on floppy image returns 0
-00015397555i[FLOPPY] read() on floppy image returns 0
-00015442000i[FLOPPY] read() on floppy image returns 0
-00015486446i[FLOPPY] read() on floppy image returns 0
-00015530891i[FLOPPY] read() on floppy image returns 0
-00015575337i[FLOPPY] read() on floppy image returns 0
-00015620391i[CPU0  ] WARNING: HLT instruction with IF=0!
-04206404003i[      ] cpu loop quit, shutting down simulator
-04206404003i[CPU0  ] CPU is in protected mode (halted)
-04206404003i[CPU0  ] CS.mode = 32 bit
-04206404003i[CPU0  ] SS.mode = 32 bit
-04206404003i[CPU0  ] EFER   = 0x00000000
-04206404003i[CPU0  ] | EAX=000b8000  EBX=00000000  ECX=00090000  EDX=00000000
-04206404003i[CPU0  ] | ESP=0008fff8  EBP=00090000  ESI=00007d1b  EDI=0000ffac
-04206404003i[CPU0  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af pf cf
-04206404003i[CPU0  ] | SEG sltr(index|ti|rpl)     base    limit G D
-04206404003i[CPU0  ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
-04206404003i[CPU0  ] |  DS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-04206404003i[CPU0  ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-04206404003i[CPU0  ] |  ES:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-04206404003i[CPU0  ] |  FS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-04206404003i[CPU0  ] |  GS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
-04206404003i[CPU0  ] | EIP=00001007 (00001007)
-04206404003i[CPU0  ] | CR0=0x60000011 CR2=0x00000000
-04206404003i[CPU0  ] | CR3=0x00000000 CR4=0x00000000
-04206404003i[CPU0  ] 0x0000000000001007>> nop  : 90
-04206404003i[CMOS  ] Last time is 1404256063 (Tue Jul  1 19:07:43 2014)
-04206404003i[XGUI  ] Exit
-04206404003i[      ] restoring default signal behavior
-04206404003i[SIM   ] quit_sim called with exit code 1
+00014918921i[BIOS  ] Booting from 0000:7c00
+00015721464i[CPU0  ] WARNING: HLT instruction with IF=0!
+00352804006i[      ] cpu loop quit, shutting down simulator
+00352804006i[CPU0  ] CPU is in protected mode (halted)
+00352804006i[CPU0  ] CS.mode = 32 bit
+00352804006i[CPU0  ] SS.mode = 32 bit
+00352804006i[CPU0  ] EFER   = 0x00000000
+00352804006i[CPU0  ] | EAX=00000000  EBX=00000000  ECX=00000018  EDX=000003d5
+00352804006i[CPU0  ] | ESP=0008fff8  EBP=00090000  ESI=00007d1b  EDI=0000ffac
+00352804006i[CPU0  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af pf cf
+00352804006i[CPU0  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00352804006i[CPU0  ] |  CS:0008( 0001| 0|  0) 00000000 ffffffff 1 1
+00352804006i[CPU0  ] |  DS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00352804006i[CPU0  ] |  SS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00352804006i[CPU0  ] |  ES:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00352804006i[CPU0  ] |  FS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00352804006i[CPU0  ] |  GS:0010( 0002| 0|  0) 00000000 ffffffff 1 1
+00352804006i[CPU0  ] | EIP=00001007 (00001007)
+00352804006i[CPU0  ] | CR0=0x60000011 CR2=0x00000000
+00352804006i[CPU0  ] | CR3=0x00000000 CR4=0x00000000
+00352804006i[CPU0  ] 0x0000000000001007>> nop  : 90
+00352804006i[CMOS  ] Last time is 1404460964 (Fri Jul  4 04:02:44 2014)
+00352804006i[XGUI  ] Exit
+00352804006i[      ] restoring default signal behavior
+00352804006i[SIM   ] quit_sim called with exit code 1

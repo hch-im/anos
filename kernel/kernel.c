@@ -1,4 +1,15 @@
+/****************************************************
+ * kernel.c
+ * 
+ * The kernel of the operating system.
+ ***************************************************/
+
 void main(){
-	char* video_memory = (char*)0xb8000;
-	*video_memory = 'X';
+	clear_screen();
+	int i;
+	for(i = 'a'; i <= 'y'; i++){
+		set_text_color((unsigned char)i);		
+		print_char(i, -1, -1);
+		puts("test \n");
+	}
 }

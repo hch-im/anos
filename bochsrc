@@ -1,6 +1,5 @@
 #debug
 #gdbstub: enabled=1, port=1234, text_base=0, data_base=0, bss_base=0
-#display_library: x, options="gui_debug"
 
 # rom image
 romimage: file=/usr/local/share/bochs/BIOS-bochs-latest 
@@ -10,13 +9,18 @@ romimage: file=/usr/local/share/bochs/BIOS-bochs-latest
 # vga rom
 vgaromimage: file=/usr/local/share/bochs/VGABIOS-lgpl-latest
 
+#disk
+#ata0-master: type=disk, path="c.img", mode=flat
+
 # floppy driver
-floppya: 1_44=anos.img, status=inserted
+floppya: 1_44=a.img, status=inserted
+
 # boot from floppy
 boot: floppy
-# log messages
 
+# log messages
 log: bochsout.txt
+
 # disable mouse
 mouse: enabled=0
 # enable keyboard mapping
